@@ -1,0 +1,201 @@
+def start():
+    print("              {}")
+    print("            .--.")
+    print("           /.--.\")")
+    print("           |====|")
+    print("           |`::`|")
+    print("       .-;`\..../`;.-^-.")
+    print("/\\   /  |...::..|`   :   `|")
+    print("|:'\ |   /'''::''|   .:.   |")
+    print("@|\ /\;-,/\   ::  |..:::::..|")
+    print("||\ <` >  >.::.| ':::::' |")
+    print("|| `""`  /   ^^  |   ':'   |")
+    print( "||       |       \    :    /")
+    print( "||       |        \   :   / ")
+    print( "||       |_/\___|`-.:.-`")
+    print( "||        \_ || _/    `")
+    print( "||        <_ >< _>")
+    print( "||        |  ||  |")
+    print( "||        |  ||  |")
+    print( "||       \.:||:./")
+    print( "\/      /_/\_\")")
+    print("|Welcome to the Adventure of Green Knight Sir Gawain|")
+    ans = input("Would you like to begin? (Y/N):- ")
+    ans = ans.lower()
+    if "y" in ans:
+        begin()
+    else:
+        print("Thankyou for not playing")
+        a = input("press any key to exit.")
+
+def begin():
+    print("Checkpoint created\nOn the christmas morning when you are sitting in the King's court, a mysterious figure enters the hall.\nYou lay your eyes on an 8ft Giant whose face looks like a bark of a tree\nYou ask him:\nWho are you? (1)\nLeave my hall (2)")
+    ans = input()
+    if ans == "1":
+        print("The Giant replies: 'I am the Green Knight and I have a test for the bravest of the knights.")
+        challenge()
+    elif ans == "2":
+        print("You get kicked out of the hall by the giant, literally.\nWould you like to return to last checkpoint(A) or Exit(E)")
+        ans = input()
+        ans = ans.lower()
+        if ans == "a":
+            begin()
+        elif ans == "e":
+            end()
+        else:
+            print("you have entered an invalid input, returning to last checkpoint.")
+            begin()
+    else:
+        print("you have entered an invalid input, returning to last checkpoint.")
+        begin()
+
+def challenge():
+    print("Checkpoint created\nSir Gawain: 'What is the challenge?'\nGreen Knight: 'I may ask you to fight me one on one, however, whatever form of wound I recieve, I shall give you the same wound.")
+    ans = input("Would you like to accept his offer? (Y/N):- ")
+    ans = ans.lower()
+    if ans == "y":
+        print("The Green Knight smiles and the King offers you his sword to fight the beast.\nYou step into the center of the court. The Green Knight drops his sword and asks you to attack first.")
+        choice()
+    elif ans == "n":
+        print("You are now considered a coward and banished from the King's court.\n Would you like to continue from last checkpoint(A) or Exit(E)?")
+        ans = input()
+        ans = ans.lower()
+        if ans == "a":
+            challenge()
+        elif ans == "e":
+            end()
+        else:
+            print("you have entered an invalid input, returning to last checkpoint.")
+            challenge()
+    else:
+        print("you have entered an invalid input, returning to last checkpoint.")
+        challenge()
+
+def choice():
+    print("Would you rather?\n(A) Slay the Beast by taking its head off while sustaining a low blow on your stomach.\n(B) Just put a cut on his cheek while avoiding injury.")
+    ans = input()
+    ans = ans.lower()
+    if ans == "a":
+        print(" In one risky but swift motion you take Green Knight’s head off while sliding backwards due to the blow on the stomach and gasping for air.\nNow there is deafening silence in the king’s court.GK picks his head up from the ground with his headless body and starts to laugh maniacally,While tugging his head near his abdomen Green Knight commends 'Sir Gawain well done! You shall come to me next Christmas so I can return the favor.'")
+        journey()
+    elif ans == "b":
+        print("You are now considered a coward and banished from the King's court.\n Would you like to continue from last checkpoint(A) or Exit(E)?")
+        ans = input()
+        ans = ans.lower()
+        if ans == "a":
+            challenge()
+        elif ans == "e":
+            end()
+        else:
+            print("you have entered an invalid input, returning to last checkpoint.")
+            challenge()
+    else:
+        print("you have entered an invalid input, returning to last checkpoint.")
+        challenge()
+
+def journey():
+    print("You set out on the journey to meet the Green Knight as you promised.Would you cross?\n(A)The field of giants.\n(B)Battlefield of the dead.")
+    ans = input()
+    ans = ans.lower()
+    if ans == "a":
+        print("You see a field of giants hundreds of feet tall.")
+        giants()
+    elif ans == "b":
+        battlefield()
+    else:
+        print("you have entered an invalid input, returning to last checkpoint.")
+        challenge()
+
+def battlefield():
+    print("Checkpoint created\nAs you cross the Battlefield surrounded by smog and reeking of rotten bodies, you see a kid crying for help.\n(A) Would you tend to the helpless child surrounded by mystery?\n(B) Or just ignore his existence and move on with your journey.")
+    ans = input()
+    ans = ans.lower()
+    if ans == "a":
+        print("You decided to help the stranger, the stranger seems frail and tired. You get down from the horse to help.You get ambushed by the bandits, they steal your horse and your food supplies. You get stranded alone, wounded and exhausted. You meet your fate on the battlefield and took your final breath.")
+        ans = input("Do you wish to return to last checkpoint(A) or Exit(E)")
+        ans = ans.lower()
+        if ans == "a":
+            battlefield()
+        elif ans == "e":
+            end()
+        else:
+            print("you have entered an invalid input, returning to last checkpoint.")
+            battlefield()
+    elif ans == "b":
+        print("You decided not to help the stranger as this would delay your meeting with the Knight, you continue on your journey, however deep down you feel a little selfish; not fitting for a Knight.")
+        final()
+    else:
+        print("you have entered an invalid input, returning to last checkpoint.")
+        battlefield()
+
+def giants():
+    print("Checkpoint created\n(A) Consider riding on a giant's shoulder.\n(B) Ride your own horse instead.")
+    ans = input()
+    ans = ans.lower()
+    if ans == "a":
+        print("To ride on the giants shoulder you must solve this problem first: 10*11/7+4")
+        ans = input()
+        if ans == "10":
+            final()
+        else:
+            print("Wrong answer, the giant stepped on you and you died.\nDo you wish to return to last checkpoint(A) or Exit (E)?")
+            ans = input()
+            if ans == "a":
+                giants()
+            elif ans == "e":
+                end()
+            else:
+                print("Enter a valid answer.")
+                giants()
+    elif ans == "b":
+        print("You chose to ride on your horse however, your horse gets startled by the stomping steps of the towering giants leaving you behind. You get stranded and die due to starvation and exhaustion. \nDo you wish to return to last checkpoint(A) or do you want to Exit(E)?")
+        ans = input()
+        ans = ans.lower()
+        if ans == "a":
+            giants()
+        elif ans == "e":
+            end()
+        else:
+            print("You have entered an invalid answer, returning to last checkpoint.")
+            giants()
+    else:
+        print("you have entered an invalid input, returning to last checkpoint.")
+        giants()
+
+def final():
+    print("After your long journey you finally see the Green Chapel in the distance. It is an old majestic building covered in vegetation. You continue on your journey as the Green Knight awaits.\nThe Green Knight welcomes you and congratulates you on your long journey here.\nGreen Knight is an ancient being and wastes no time with the festivities.\nHe asks you to kneel as he would now return the favor and would take your head off the shoulders.\n(A) Would you run from this and save your life?\n(B) Would you let Green Knight help you meet your end as this was your fate?")
+    ans = input()
+    ans = ans.lower()
+    if ans == "a":
+        print("You take the long journey back. Upon reaching you are congratulated by your people for slaying the Green Knight yet again, you gain so much popularity that in a few years you were given the command of the army and soon you will be crowned King. However, deep down you know you were a coward for fleeing, you never found joy in life and died on the battlefield as a coward.")
+        print("Would you like to play again? (A) or would you like to exit?(E)")
+        ans = input()
+        ans = ans.lower()
+        if ans == "a":
+            begin()
+        elif ans == "e":
+            end()
+        else:
+            print("You have entered an invalid answer, you don't deserve to play.")
+            end()
+    elif ans == "b":
+        print("You die content with your choice, knowing you were Sir Gawain who did not back down from the Quest. The tale of your adventures will be told for the ages to come and now you truly are ‘Sir Gawain the Brave’.")
+        ans = input("Would you like to play again(A) or exit(E)?")
+        ans = ans.lower()
+        if ans == "a":
+            begin()
+        elif ans == "e":
+            end()
+        else:
+            print("You have entered an invalid answer, you don't deserve to play anymore.")
+            end()
+    else:
+        print("Enter a valid answer")
+        final()
+
+def end():
+    print("Thankyou for playing")
+    a = input("press any key to exit.")
+
+# start the game
+start()
